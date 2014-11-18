@@ -241,10 +241,9 @@ public class NfcPlugin extends CordovaPlugin implements NfcAdapter.OnNdefPushCom
         callbackContext.success(data_nfc);
     }
      private void readMifare_SB(JSONArray data, CallbackContext callbackContext) throws JSONException {
-    	//int sector=data.getString(0);
-    	//int bloque=data.getString(1);
-    	  int sector=1;
-    	  int bloque=0;
+    	int sector=Integer.parseInt(data.getString(0));
+    	int bloque=Integer.parseInt(data.getString(1));
+    	  
     	  Tag tagFromIntent = savedIntent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
  				byte[] data_mf;
  				data_nfc="test";
